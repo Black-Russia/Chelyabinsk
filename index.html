@@ -6,87 +6,119 @@
     <title>Летний Розыгрыш в Black Russia</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f0f8ff;
+            background: #f4f7f6;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         header, main, footer {
             padding: 20px;
             text-align: center;
         }
         header {
-            background: #333;
+            background: linear-gradient(135deg, #4a90e2, #007aff);
             color: #fff;
+            padding: 40px 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
         }
         a {
-            color: #00f;
+            color: #fff;
+            text-decoration: none;
         }
         .button {
-            background-color: #4CAF50;
+            background-color: #ff5e3a;
             color: white;
-            padding: 15px 20px;
+            padding: 15px 30px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            margin: 20px 10px;
+            margin: 20px auto;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .button:hover {
-            background-color: #45a049;
+            background-color: #e64e2a;
+        }
+        .content {
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 800px;
+            text-align: left;
         }
         .rules, .prizes {
             padding: 20px;
-            background: #e0f7fa;
-            margin: 20px auto;
-            border-radius: 10px;
-            max-width: 800px;
-        }
-        .promo-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
+            background: #fff;
             margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .rules h2, .prizes h2 {
+            text-align: center;
+        }
+        .rules ul, .prizes ul {
+            padding-left: 20px;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            margin-top: auto;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        footer a {
+            color: #4a90e2;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Летний Розыгрыш в Black Russia</h1>
-        <p>Примите участие и выиграйте призы!</p>
-        <img src="IMG_2304.jpeg" alt="Выиграй 1 из 100 призов" class="promo-image">
-        <a href="#participate" class="button">Участвовать</a>
+        <p>Примите участие и выиграйте невероятные призы!</p>
+        <a href="https://t.me/blacckrussia_bot" class="button">Перейти в бот</a>
     </header>
-    <main>
+    <main class="content">
         <section id="rules" class="rules">
             <h2>Правила Участия</h2>
             <p>Уважаемые игроки Black Russia,</p>
-            <p>Мы рады представить вам наше крупное обновление этим летом и в честь этого события мы хотим сделать вам приятный сюрприз. Мы раздаем 1000 подарков 1000 игрокам из разных серверов игры!</p>
-            <h3>Правила:</h3>
+            <p>С радостью представляем вам наше крупное обновление этим летом! В честь этого события мы раздаем 1000 подарков 1000 игрокам из разных серверов игры.</p>
+            <h3>Условия участия:</h3>
             <ul>
-                <li>Один приз на один аккаунт: Каждый участник может получить только один подарок, и не больше. Мы просим вас не пытаться получить несколько подарков с одного аккаунта, так как это может привести к дисквалификации.</li>
-                <li>Уважайте бота: Наш бот, управляющий акцией, отвечает только на определенные команды. Пожалуйста, не спамьте бота сообщениями, это поможет всем участникам акции.</li>
-                <li>Терпеливость: Мы получаем более 1000 сообщений в день, и мы не можем раздать все подарки мгновенно. Пожалуйста, будьте терпеливыми и дождитесь своей очереди.</li>
-                <li>Поддержка честной игры: Мы проверяем аккаунты на наличие нарушений правил игры. Любые аккаунты с нарушениями могут быть дисквалифицированы.</li>
-                <li>Следите за сроками: Пожалуйста, убедитесь, что вы участвуете в акции в указанные сроки.</li>
+                <li><strong>Один приз на один аккаунт:</strong> Каждый участник может получить только один подарок. Попытки получить несколько подарков с одного аккаунта приведут к дисквалификации.</li>
+                <li><strong>Уважайте бота:</strong> Наш бот, управляющий акцией, отвечает только на определенные команды. Пожалуйста, не спамьте его сообщениями, чтобы все участники могли участвовать.</li>
+                <li><strong>Терпение:</strong> Мы получаем множество сообщений ежедневно и не можем раздать все подарки мгновенно. Пожалуйста, проявите терпение и дождитесь своей очереди.</li>
+                <li><strong>Честная игра:</strong> Мы проверяем аккаунты на наличие нарушений правил игры. Любые аккаунты с нарушениями будут дисквалифицированы.</li>
+                <li><strong>Соблюдение сроков:</strong> Убедитесь, что вы участвуете в акции в указанные сроки.</li>
             </ul>
-            <p>Мы надеемся, что эта акция сделает ваш игровой опыт еще более увлекательным, и мы ждем вас участвовать в ней. Не упустите свой шанс получить один из сотни или даже тысячи подарков. Ждем вас в игре Black Russia и желаем удачи!</p>
+            <p>Эта акция создана для того, чтобы сделать ваш игровой опыт еще более увлекательным. Не упустите свой шанс выиграть один из тысяч призов! Ждем вас в игре Black Russia и желаем удачи!</p>
         </section>
         <section id="prizes" class="prizes">
             <h2>Призы</h2>
             <ul>
-                <li>VIP доступ</li>
-                <li>Машины</li>
-                <li>Дома</li>
+                <li>VIP-статус</li>
+                <li>Эксклюзивные машины</li>
+                <li>Роскошные дома</li>
                 <li>Виртуальные деньги</li>
                 <li>Black Coin-ы (специальные монеты доната)</li>
             </ul>
         </section>
     </main>
     <footer>
-        <p>Следите за нашими новостями в Telegram: <a href="https://t.me/blacckrussia_bot">t.me/blacckrussia_bot</a></p>
+        <p>Период проведения: 29 июня - 30 августа 2024</p>
+        <p>Все права защищены Black Russia © 2024</p>
     </footer>
 </body>
 </html>
