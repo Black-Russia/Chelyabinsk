@@ -14,28 +14,66 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            animation: background-animation 10s infinite alternate;
         }
+
+        @keyframes background-animation {
+            0% {
+                background-color: #141414;
+            }
+            50% {
+                background-color: #2b2b2b;
+            }
+            100% {
+                background-color: #141414;
+            }
+        }
+
         header, main, footer {
             padding: 20px;
             text-align: center;
         }
+
         header {
-            background: url('background-image-url.jpg') no-repeat center center; /* Замените на реальный URL фона */
-            background-size: cover;
+            background: linear-gradient(45deg, #141414, #ff0000);
+            background-size: 400% 400%;
             color: #fff;
             padding: 40px 20px;
+            animation: gradient-animation 15s ease infinite;
         }
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         header h1 {
             font-size: 3em;
             margin: 0;
+            animation: text-glow 1.5s ease-in-out infinite alternate;
         }
-        header p {
-            font-size: 1.5em;
+
+        @keyframes text-glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000, 0 0 80px #ff0000;
+            }
         }
+
         a {
             color: #fff;
             text-decoration: none;
         }
+
         .button {
             background-color: #ff5e3a;
             color: white;
@@ -48,12 +86,31 @@
             border-radius: 30px;
             font-size: 1.2em;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s, transform 0.3s;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            animation: button-pulse 1.5s infinite;
         }
+
         .button:hover {
             background-color: #e64e2a;
             transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
         }
+
+        @keyframes button-pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 25px rgba(255, 94, 58, 0.6), 0 0 50px rgba(255, 94, 58, 0.6);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 35px rgba(255, 94, 58, 0.6), 0 0 70px rgba(255, 94, 58, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 25px rgba(255, 94, 58, 0.6), 0 0 50px rgba(255, 94, 58, 0.6);
+            }
+        }
+
         .content {
             padding: 20px;
             margin: 0 auto;
@@ -61,6 +118,7 @@
             text-align: left;
             line-height: 1.6;
         }
+
         .rules, .prizes {
             background: #1c1c1c;
             padding: 20px;
@@ -68,25 +126,30 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
+
         .rules h2, .prizes h2 {
             font-size: 2em;
             color: #ff5e3a;
             margin-top: 0;
         }
+
         .rules ul, .prizes ul {
             padding-left: 20px;
             list-style: none;
         }
+
         .rules li, .prizes li {
             margin-bottom: 10px;
             font-size: 1.1em;
             line-height: 1.5;
         }
+
         .rules li::before, .prizes li::before {
             content: "✔";
             color: #ff5e3a;
             margin-right: 10px;
         }
+
         .timeline {
             background: #1c1c1c;
             border-radius: 10px;
@@ -95,40 +158,29 @@
             max-width: 960px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
+
         .timeline h2 {
             font-size: 2em;
             color: #ff5e3a;
         }
+
         .timeline ul {
             padding: 0;
             list-style: none;
         }
+
         .timeline li {
             display: flex;
             align-items: center;
             margin: 10px 0;
         }
+
         .timeline li::before {
             content: "🎉";
             font-size: 1.5em;
             margin-right: 10px;
         }
-        .contact {
-            background: #1c1c1c;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 960px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        .contact h2 {
-            font-size: 2em;
-            color: #ff5e3a;
-        }
-        .contact p {
-            text-align: center;
-            font-size: 1.2em;
-        }
+
         footer {
             background: #141414;
             color: #fff;
@@ -136,6 +188,7 @@
             text-align: center;
             margin-top: auto;
         }
+
         footer p {
             margin: 5px 0;
             font-size: 0.9em;
@@ -167,7 +220,7 @@
             <h2>Призы</h2>
             <ul>
                 <li>VIP-статус</li>
-                <li>Эксклюзивные машины</li>
+                                <li>Эксклюзивные машины</li>
                 <li>Роскошные дома</li>
                 <li>Виртуальные деньги</li>
                 <li>Black Coin-ы (специальные монеты доната)</li>
@@ -179,10 +232,6 @@
                 <li>Начало: 29 июня 2024</li>
                 <li>Конец: 30 августа 2024</li>
             </ul>
-        </section>
-        <section class="contact">
-            <h2>Контакты</h2>
-            <p>Если у вас есть вопросы, обращайтесь к нашей поддержке через <a href="https://t.me/blacckrussia_bot">бота</a>.</p>
         </section>
     </main>
     <footer>
