@@ -69,6 +69,24 @@
             }
         }
 
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff5e3a;
+        }
+
         a {
             color: #fff;
             text-decoration: none;
@@ -199,6 +217,11 @@
     <header>
         <h1>Летний Розыгрыш в Black Russia</h1>
         <p>Примите участие и выиграйте невероятные призы!</p>
+        <nav>
+            <a href="#rules">Правила</a>
+            <a href="#prizes">Призы</a>
+            <a href="#timeline">Сроки</a>
+        </nav>
         <a href="https://t.me/blacckrussia_bot" class="button">Перейти в бота</a>
     </header>
     <main class="content">
@@ -220,13 +243,13 @@
             <h2>Призы</h2>
             <ul>
                 <li>VIP-статус</li>
-                                <li>Эксклюзивные машины</li>
+                <li>Эксклюзивные машины</li>
                 <li>Роскошные дома</li>
                 <li>Виртуальные деньги</li>
                 <li>Black Coin-ы (специальные монеты доната)</li>
             </ul>
         </section>
-        <section class="timeline">
+        <section id="timeline" class="timeline">
             <h2>Период проведения</h2>
             <ul>
                 <li>Начало: 29 июня 2024</li>
