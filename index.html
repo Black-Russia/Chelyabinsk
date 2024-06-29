@@ -9,8 +9,8 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: #141414;
-            color: #fff;
+            background: linear-gradient(to bottom right, #ff7e5f, #feb47b);
+            color: #141414;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -18,15 +18,9 @@
         }
 
         @keyframes background-animation {
-            0% {
-                background-color: #141414;
-            }
-            50% {
-                background-color: #2b2b2b;
-            }
-            100% {
-                background-color: #141414;
-            }
+            0% { background-color: #ff7e5f; }
+            50% { background-color: #feb47b; }
+            100% { background-color: #ff7e5f; }
         }
 
         header, main, footer {
@@ -35,7 +29,7 @@
         }
 
         header {
-            background: linear-gradient(45deg, #141414, #ff0000);
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
             background-size: 400% 400%;
             color: #fff;
             padding: 40px 20px;
@@ -43,15 +37,9 @@
         }
 
         @keyframes gradient-animation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         header h1 {
@@ -61,26 +49,23 @@
         }
 
         @keyframes text-glow {
-            from {
-                text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
-            }
-            to {
-                text-shadow: 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000, 0 0 80px #ff0000;
-            }
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #ff0000; }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px #ff0000; }
         }
 
         nav {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            margin: 20px 0;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
             margin: 0 15px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             transition: color 0.3s;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         nav a:hover {
@@ -115,18 +100,9 @@
         }
 
         @keyframes button-pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 25px rgba(255, 94, 58, 0.6), 0 0 50px rgba(255, 94, 58, 0.6);
-            }
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 0 35px rgba(255, 94, 58, 0.6), 0 0 70px rgba(255, 94, 58, 0.6);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 25px rgba(255, 94, 58, 0.6), 0 0 50px rgba(255, 94, 58, 0.6);
-            }
+            0% { transform: scale(1); box-shadow: 0 0 25px rgba(255, 94, 58, 0.6); }
+            50% { transform: scale(1.05); box-shadow: 0 0 35px rgba(255, 94, 58, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 0 25px rgba(255, 94, 58, 0.6); }
         }
 
         .content {
@@ -135,14 +111,17 @@
             max-width: 960px;
             text-align: left;
             line-height: 1.6;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .rules, .prizes {
-            background: #1c1c1c;
+            background: #ffffff;
             padding: 20px;
             margin: 20px 0;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .rules h2, .prizes h2 {
@@ -169,12 +148,12 @@
         }
 
         .timeline {
-            background: #1c1c1c;
+            background: #ffffff;
             border-radius: 10px;
             padding: 20px;
             margin: 20px auto;
             max-width: 960px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .timeline h2 {
@@ -205,11 +184,20 @@
             padding: 20px;
             text-align: center;
             margin-top: auto;
+            position: relative;
         }
 
         footer p {
             margin: 5px 0;
             font-size: 0.9em;
+        }
+
+        .date {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8em;
+            position: absolute;
+            bottom: 5px;
+            right: 20px;
         }
     </style>
 </head>
@@ -246,19 +234,23 @@
                 <li>Эксклюзивные машины</li>
                 <li>Роскошные дома</li>
                 <li>Виртуальные деньги</li>
-                <li>Black Coin-ы (специальные монеты доната)</li>
             </ul>
         </section>
         <section id="timeline" class="timeline">
-            <h2>Период проведения</h2>
+            <h2>Дата проведения розыгрыша</h2>
             <ul>
-                <li>Начало: 29 июня 2024</li>
-                <li>Конец: 30 августа 2024</li>
+                <li>Начало: 31 июля 2024</li>
+                <li>Окончание: 29 августа 2024</li>
             </ul>
         </section>
     </main>
     <footer>
-        <p>© ВСЕ ПРАВА ЗАЩИЩЕНЫ ООО "БЛЕКХАБ ГЕЙМС"</p>
+        <p>Спасибо, что играете в Black Russia! Удачи в розыгрыше!</p>
+        <div class="date">
+            <p>Дата проведения: с 31 июля 2024 по 29 августа 2024</p>
+        </div>
+        <p>&copy; 2024 Black Russia. Все права защищены.</p>
+        <p>Политика конфиденциальности | Условия использования</p>
     </footer>
 </body>
 </html>
