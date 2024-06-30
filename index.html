@@ -9,7 +9,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: #141414;
+            background: linear-gradient(180deg, #141414, #000000);
             color: #fff;
             display: flex;
             flex-direction: column;
@@ -83,7 +83,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
-        .rules, .prizes {
+        .rules {
             background: rgba(0, 0, 0, 0.8);
             padding: 20px;
             margin: 20px 0;
@@ -91,24 +91,55 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
-        .rules h2, .prizes h2 {
+        .rules h2 {
             font-size: 2em;
             color: #ff5e3a;
             margin-top: 0;
         }
 
-        .rules ul, .prizes ul {
+        .rules ul {
             padding-left: 20px;
             list-style: none;
         }
 
-        .rules li, .prizes li {
+        .rules li {
             margin-bottom: 10px;
             font-size: 1.1em;
             line-height: 1.5;
         }
 
-        .rules li::before, .prizes li::before {
+        .rules li::before {
+            content: "✔";
+            color: #ff5e3a;
+            margin-right: 10px;
+        }
+
+        .prizes {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .prizes h2 {
+            font-size: 2em;
+            color: #ff5e3a;
+            margin-top: 0;
+        }
+
+        .prizes ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .prizes li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        .prizes li::before {
             content: "✔";
             color: #ff5e3a;
             margin-right: 10px;
@@ -126,6 +157,16 @@
         footer p {
             margin: 5px 0;
             font-size: 0.9em;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #ff5e3a;
         }
 
         .date {
@@ -167,7 +208,7 @@
             <h2>Призы</h2>
             <ul>
                 <li>VIP-статус</li>
-                <li>Эксклюзивные машины</li>
+                <li>Эксклюзивные автомобили</li>
                 <li>Роскошные дома</li>
                 <li>Виртуальные деньги</li>
             </ul>
@@ -186,7 +227,7 @@
             <p>Дата проведения: с 31 июля 2024 по 29 августа 2024</p>
         </div>
         <p>© 2024 Black Russia. Все права защищены.</p>
-        <p>Политика конфиденциальности | Условия использования</p>
+        <p><a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
     </footer>
 </body>
 </html>
