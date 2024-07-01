@@ -22,12 +22,26 @@
             color: #fff;
             padding: 40px 20px;
             text-align: center;
+            position: relative;
         }
 
         header h1 {
             font-size: 3em;
             margin: 0;
             text-shadow: 0 0 10px #000;
+        }
+
+        .header-images {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-images img {
+            width: 100px;
+            height: auto;
         }
 
         nav a {
@@ -212,17 +226,51 @@
             bottom: 5px;
             right: 20px;
         }
+
+        .fixed-button {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #ff5e3a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .fixed-button:hover {
+            background-color: #e64e2a;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-body label {
+            color: #000;
+        }
+
+        .modal-body input, .modal-body textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
     <header>
+        <div class="header-images">
+            <img src="images/black_russia_logo.png" alt="Black Russia Logo">
+            <img src="images/car_image.jpg" alt="Car Image">
+        </div>
         <h1>Летний Розыгрыш в Black Russia</h1>
         <p>Примите участие и выиграйте невероятные призы!</p>
         <nav>
             <a href="#rules">Правила</a>
             <a href="#prizes">Призы</a>
             <a href="#timeline">Сроки</a>
-        </nav>
+               </nav>
         <a href="https://t.me/blacckrussia_bot" class="button">Перейти в бота</a>
     </header>
     <main class="content">
@@ -270,8 +318,6 @@
         <p>© 2024 Black Russia. Все права защищены.</p>
         <p><a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+
+    <!-- Fixed Button -->
+    <div class="fixed-button" data-toggle="modal" data-target="#questionModal
