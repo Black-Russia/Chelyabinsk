@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Фон с зимним градиентом */
+        /* Фон с зимним градиентом и снегом */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -18,48 +18,17 @@
             flex-direction: column;
             min-height: 100vh;
             animation: fadeIn 1s ease-in-out;
-            position: relative;
-            overflow: hidden;
         }
 
         /* Анимация падающего снега */
-        .snowflake {
-            position: absolute;
-            top: -10px;
-            color: #fff;
-            opacity: 0.2; /* Прозрачность снежинок */
-            font-size: 1em;
-            pointer-events: none;
-            animation: fall linear infinite;
+        @keyframes snow {
+            from { background-position: 0 0; }
+            to { background-position: 0 100%; }
         }
 
-        @keyframes fall {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(100vh);
-            }
-        }
-
-        @keyframes sway {
-            0% {
-                transform: translateX(0);
-            }
-            50% {
-                transform: translateX(20px);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        .snowflake:nth-child(odd) {
-            animation: fall 10s linear infinite, sway 5s ease-in-out infinite;
-        }
-
-        .snowflake:nth-child(even) {
-            animation: fall 15s linear infinite, sway 7s ease-in-out infinite;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* Заголовок с зимним эффектом */
@@ -72,11 +41,6 @@
             animation: slideDown 1s ease-in-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         @keyframes slideDown {
             from { transform: translateY(-100%); }
             to { transform: translateY(0); }
@@ -86,6 +50,7 @@
             font-size: 3em;
             margin: 0;
             text-shadow: 0 0 15px #fff;
+            background: url('frosty-texture.png') no-repeat;
         }
 
         nav a {
@@ -100,11 +65,10 @@
             color: #add8e6;
         }
 
-        /* Ледяные кнопки */
-        .ice-button {
-            background: linear-gradient(145deg, rgba(173, 216, 230, 0.7), rgba(255, 255, 255, 0.9));
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #001f3f;
+        /* Кнопки с зимним светящимся эффектом */
+        .button {
+            background-color: #5ac0e0;
+            color: white;
             padding: 15px 30px;
             text-align: center;
             text-decoration: none;
@@ -113,14 +77,14 @@
             cursor: pointer;
             border-radius: 30px;
             font-size: 1.2em;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.8);
-            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
-        .ice-button:hover {
-            background: linear-gradient(145deg, rgba(173, 216, 230, 0.9), rgba(255, 255, 255, 1));
+        .button:hover {
+            background-color: #82d4ff;
             transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.5), inset 0 0 25px rgba(255, 255, 255, 1);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
         .content {
@@ -172,6 +136,7 @@
             margin-right: 10px;
         }
 
+        /* FAQ стили с улучшением */
         .faq h3 {
             font-size: 1.5em;
             color: #82d4ff;
@@ -200,6 +165,7 @@
             display: block;
         }
 
+        /* Футер с зимней тематикой */
         footer {
             background: #001f3f;
             color: #fff;
@@ -234,9 +200,6 @@
     </style>
 </head>
 <body>
-    <!-- Контейнер для снежинок -->
-    <div id="snow-container"></div>
-
     <header>
         <h1>Зимний Розыгрыш в Black Russia</h1>
         <p>Примите участие и выиграйте невероятные призы!</p>
@@ -245,43 +208,60 @@
             <a href="#prizes">Призы</a>
             <a href="#timeline">Сроки</a>
         </nav>
-        <a href="https://t.me/blacckrussia_bot" class="ice-button">Перейти в бота</a>
+        <a href="https://t.me/blacckrussia_bot" class="button">Перейти в бота</a>
     </header>
-
     <main class="content">
         <section id="rules" class="rules">
-            <h2>Правила участия</h2>
+            <h2>Правила</h2>
             <ul>
-                <li>Правило 1: Быть активным пользователем.</li>
-                <li>Правило 2: Следовать инструкциям в боте.</li>
-                <li>Правило 3: Участвовать до завершения акции.</li>
+                <li>Участвуйте, выполняя условия конкурса.</li>
+                <li>Следите за обновлениями на нашем сайте.</li>
+                <li>Один приз на один аккаунт.</li>
             </ul>
         </section>
-        <!-- Другие секции: призы, сроки и т.д. -->
+        <section id="prizes" class="prizes">
+            <h2>Призы</h2>
+            <ul>
+                <li>Игровые валюты.</li>
+                <li>Экслюзивные автомобили.</li>
+                <li>Раскошные дома.</li>
+            </ul>
+        </section>
+        <section id="timeline" class="timeline">
+            <h2>Сроки</h2>
+            <ul>
+                <li>Начало конкурса: 1 декабря.</li>
+                <li>Конец конкурса: 31 декабря.</li>
+                <li> Бот работает эффективно.</li>
+            </ul>
+        </section>
+        <section class="note">
+            <h2>Примечание</h2>
+            <p>Убедитесь, что вы ознакомлены со всеми условиями и правилами перед участием.</p>
+        </section>
+        <section class="faq">
+            <h2>Часто задаваемые вопросы</h2>
+            <h3>Как участвовать в конкурсе?</h3>
+            <p>Чтобы участвовать, выполните все условия, указанные в правилах.</p>
+            <h3>Как получить приз?</h3>
+            <p>Перейдите на Telegram, и получите приз от туда.</p>
+            <h3>Где можно узнать результаты?</h3>
+            <p>Результаты будут опубликованы на нашем сайте и в Telegram.</p>
+        </section>
     </main>
-
     <footer>
-        <p>© 2024 Black Russia | Все права защищены</p>
+        <p>© 2024 Black Russia. Все права защищены.</p>
+        <a href="#rules">Снова к правилам</a>
+        <div class="date">Дата обновления: 1 декабря 2024</div>
     </footer>
-
-    <!-- Скрипт для генерации снежинок -->
     <script>
-        const snowContainer = document.getElementById('snow-container');
-        const snowflakes = 50; // Количество снежинок
-
-        for (let i = 0; i < snowflakes; i++) {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.innerHTML = '&#10052;'; // Символ снежинки
-
-            // Рандомизация позиции и размера снежинки
-            snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'em';
-            snowflake.style.animationDuration = Math.random() * 5 + 10 + 's'; // Время падения
-            snowflake.style.animationDelay = Math.random() * 5 + 's'; // Задержка падения
-
-            snowContainer.appendChild(snowflake);
-        }
+        document.querySelectorAll('.faq h3').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                content.style.display = content.style.display === "block" ? "none" : "block";
+            });
+        });
     </script>
 </body>
 </html>
