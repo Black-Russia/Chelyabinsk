@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Летний Розыгрыш в Black Russia</title>
+    <title>Зимний Розыгрыш в Black Russia</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        /* Фон с зимним градиентом и снегом */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(180deg, #ff7e5f, #141414);
+            background: linear-gradient(180deg, #add8e6, #001f3f);
             color: #fff;
             display: flex;
             flex-direction: column;
@@ -19,13 +20,20 @@
             animation: fadeIn 1s ease-in-out;
         }
 
+        /* Анимация падающего снега */
+        @keyframes snow {
+            from { background-position: 0 0; }
+            to { background-position: 0 100%; }
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
+        /* Заголовок с зимним эффектом */
         header {
-            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            background: linear-gradient(45deg, #5ac0e0, #82d4ff);
             color: #fff;
             padding: 40px 20px;
             text-align: center;
@@ -41,7 +49,8 @@
         header h1 {
             font-size: 3em;
             margin: 0;
-            text-shadow: 0 0 10px #000;
+            text-shadow: 0 0 15px #fff;
+            background: url('frosty-texture.png') no-repeat;
         }
 
         nav a {
@@ -53,11 +62,12 @@
         }
 
         nav a:hover {
-            color: #ff5e3a;
+            color: #add8e6;
         }
 
+        /* Кнопки с зимним светящимся эффектом */
         .button {
-            background-color: #ff5e3a;
+            background-color: #5ac0e0;
             color: white;
             padding: 15px 30px;
             text-align: center;
@@ -67,14 +77,14 @@
             cursor: pointer;
             border-radius: 30px;
             font-size: 1.2em;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
             transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
         .button:hover {
-            background-color: #e64e2a;
+            background-color: #82d4ff;
             transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
         .content {
@@ -99,12 +109,13 @@
             padding: 20px;
             margin: 20px 0;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
         .rules h2, .prizes h2, .timeline h2, .note h2, .faq h2 {
             font-size: 2em;
-            color: #ff5e3a;
+            color: #5ac0e0;
             margin-top: 0;
         }
 
@@ -121,17 +132,14 @@
 
         .rules li::before, .prizes li::before, .timeline li::before, .faq li::before {
             content: "•";
-            color: #ff5e3a;
+            color: #5ac0e0;
             margin-right: 10px;
         }
 
-        .faq {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
+        /* FAQ стили с улучшением */
         .faq h3 {
             font-size: 1.5em;
-            color: #ff5e3a;
+            color: #82d4ff;
             cursor: pointer;
             transition: color 0.3s;
             padding: 10px;
@@ -142,7 +150,7 @@
         }
 
         .faq h3:hover {
-            color: #e64e2a;
+            color: #add8e6;
         }
 
         .faq p {
@@ -157,8 +165,9 @@
             display: block;
         }
 
+        /* Футер с зимней тематикой */
         footer {
-            background: #000;
+            background: #001f3f;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -178,7 +187,7 @@
         }
 
         footer a:hover {
-            color: #ff5e3a;
+            color: #5ac0e0;
         }
 
         .date {
@@ -192,7 +201,7 @@
 </head>
 <body>
     <header>
-        <h1>Летний Розыгрыш в Black Russia</h1>
+        <h1>Зимний Розыгрыш в Black Russia</h1>
         <p>Примите участие и выиграйте невероятные призы!</p>
         <nav>
             <a href="#rules">Правила</a>
@@ -203,69 +212,54 @@
     </header>
     <main class="content">
         <section id="rules" class="rules">
-            <h2>Правила Участия</h2>
-            <p>Уважаемые игроки Black Russia,</p>
-            <p>С радостью представляем вам наше крупное обновление этим летом! В честь этого события мы раздаем 1000 подарков 1000 игрокам из разных серверов игры.</p>
-            <h3>Условия участия:</h3>
+            <h2>Правила</h2>
             <ul>
-                <li><strong>Один приз на один аккаунт:</strong> Каждый участник может получить только один подарок. Попытки получить несколько подарков с одного аккаунта приведут к дисквалификации.</li>
-                <li><strong>Уважайте бота:</strong> Наш бот, управляющий акцией, отвечает только на определенные команды. Пожалуйста, не спамьте его сообщениями, чтобы все участники могли участвовать.</li>
-                <li><strong>Терпение:</strong> Мы получаем множество сообщений ежедневно и не можем раздать все подарки мгновенно. Пожалуйста, проявите терпение и дождитесь своей очереди.</li>
-                <li><strong>Честная игра:</strong> Мы проверяем аккаунты на наличие нарушений правил игры. Любые аккаунты с нарушениями будут дисквалифицированы.</li>
-                <li><strong>Соблюдайте правила чата:</strong> Все участники должны придерживаться правил общения в чате. Оскорбления и агрессивное поведение будут наказываться.</li>
+                <li>Участвуйте, выполняя условия конкурса.</li>
+                <li>Следите за обновлениями на нашем сайте.</li>
+                <li>Один приз на один аккаунт.</li>
             </ul>
-            <p>Эта акция создана для того, чтобы сделать ваш игровой опыт еще более увлекательным. Не упустите свой шанс выиграть один из тысяч призов! Ждем вас в игре Black Russia и желаем удачи!</p>
         </section>
         <section id="prizes" class="prizes">
             <h2>Призы</h2>
             <ul>
-                <li>VIP-статус</li>
-                <li>Эксклюзивные автомобили</li>
-                <li>Роскошные дома</li>
-                <li>Виртуальные деньги</li>
+                <li>Игровые валюты.</li>
+                <li>Экслюзивные автомобили.</li>
+                <li>Раскошные дома.</li>
             </ul>
         </section>
         <section id="timeline" class="timeline">
-            <h2>Дата проведения розыгрыша</h2>
+            <h2>Сроки</h2>
             <ul>
-                <li>Начало: 31 июля 2024</li>
-                <li>Окончание: 29 августа 2024</li>
+                <li>Начало конкурса: 1 декабря.</li>
+                <li>Конец конкурса: 31 декабря.</li>
+                <li> Бот работает эффективно.</li>
             </ul>
         </section>
-        <section id="note" class="note">
-            <h2>Важно!</h2>
-            <p>Для участия в розыгрыше, пожалуйста, перейдите в нашего бота на Telegram. Все взаимодействия и подтверждения будут осуществляться через бота. Убедитесь, что вы следуете всем инструкциям и условиям, чтобы избежать дисквалификации.</p>
-            <a href="https://t.me/blacckrussia_bot" class="button">Перейти в бота</a>
+        <section class="note">
+            <h2>Примечание</h2>
+            <p>Убедитесь, что вы ознакомлены со всеми условиями и правилами перед участием.</p>
         </section>
-        <section id="faq" class="faq">
-            <h2>Часто задаваемые вопросы (FAQ)</h2>
-            <h3>Как я могу участвовать в розыгрыше?</h3>
-            <p>Для участия в розыгрыше, следуйте инструкциям, указанным в нашем боте на Telegram.</p>
-            <h3>Сколько времени занимает раздача призов?</h3>
-            <p>Раздача призов может занять некоторое время из-за большого количества участников. Пожалуйста, проявите терпение.</p>
-            <h3>Могу ли я получить несколько призов с одного аккаунта?</h3>
-            <p>Нет, каждый участник может получить только один приз с одного аккаунта.</p>
-            <h3>Что делать, если мой аккаунт был дисквалифицирован?</h3>
-            <p>Если ваш аккаунт был дисквалифицирован, вы не сможете участвовать в текущем розыгрыше. Пожалуйста, следуйте правилам, чтобы избежать дисквалификации в будущем.</p>
+        <section class="faq">
+            <h2>Часто задаваемые вопросы</h2>
+            <h3>Как участвовать в конкурсе?</h3>
+            <p>Чтобы участвовать, выполните все условия, указанные в правилах.</p>
+            <h3>Как получить приз?</h3>
+            <p>Перейдите на Telegram, и получите приз от туда.</p>
+            <h3>Где можно узнать результаты?</h3>
+            <p>Результаты будут опубликованы на нашем сайте и в Telegram.</p>
         </section>
     </main>
     <footer>
-        <p>Спасибо, что играете в Black Russia! Удачи в розыгрыше!</p>
-        <div class="date">
-            <p>Дата проведения: с 31 июля 2024 по 29 августа 2024</p>
-        </div>
         <p>© 2024 Black Russia. Все права защищены.</p>
-        <p><a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+        <a href="#rules">Снова к правилам</a>
+        <div class="date">Дата обновления: 1 декабря 2024</div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('.faq h3').on('click', function() {
-                $(this).toggleClass('active');
-                $(this).next('p').slideToggle();
-                $('.faq h3').not(this).removeClass('active').next('p').slideUp();
+        document.querySelectorAll('.faq h3').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                content.style.display = content.style.display === "block" ? "none" : "block";
             });
         });
     </script>
