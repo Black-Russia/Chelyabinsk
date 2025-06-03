@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Участвуйте в летнем розыгрыше Black Russia и выигрывайте крутые призы!">
+    <meta name="keywords" content="Black Russia, розыгрыш, призы, Telegram, игровой конкурс">
     <title>Летний Розыгрыш в Black Russia</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png"> <!-- Предполагается, что favicon добавлен -->
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(180deg, #ffe680, #ff7e5f);
+            background: linear-gradient(180deg, #ffd700, #ff6347);
             color: #333;
             display: flex;
             flex-direction: column;
@@ -25,8 +28,8 @@
         }
 
         header {
-            background: linear-gradient(45deg, #fcb045, #fd1d1d);
-            color: white;
+            background: linear-gradient(45deg, #ff4500, #dc143c);
+            color: #fff;
             padding: 40px 20px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -39,9 +42,9 @@
         }
 
         header h1 {
-            font-size: 3em;
+            font-size: 2.8em;
             margin: 0;
-            text-shadow: 0 0 10px rgba(255,255,255,0.6);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
 
         nav a {
@@ -53,11 +56,11 @@
         }
 
         nav a:hover {
-            color: #ffe680;
+            color: #ffd700;
         }
 
         .button {
-            background-color: #ffd166;
+            background-color: #ffd700;
             color: #333;
             padding: 15px 30px;
             margin: 20px auto;
@@ -67,20 +70,35 @@
             font-size: 1.2em;
             text-decoration: none;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s, transform 0.3s;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .button:hover {
             background-color: #ffea9e;
-            transform: scale(1.05);
+            transform: scale(1.1);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .button {
+                position: sticky;
+                bottom: 20px;
+                z-index: 1000;
+            }
         }
 
         .content {
             padding: 20px;
             margin: 0 auto;
             max-width: 960px;
-            text-align: left;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             animation: fadeInContent 1s ease-in-out;
@@ -96,12 +114,12 @@
             margin: 20px 0;
             border-radius: 10px;
             background: #fff9e6;
-            border-left: 6px solid #ffd166;
+            border-left: 6px solid #ffd700;
         }
 
         section h2 {
             font-size: 2em;
-            color: #f76c6c;
+            color: #ff4500;
         }
 
         section ul {
@@ -114,43 +132,61 @@
             font-size: 1.1em;
             line-height: 1.5;
             position: relative;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideInLeft 0.5s ease forwards;
+            animation-delay: calc(0.1s * var(--i));
         }
 
         section li::before {
-            content: "🌴";
+            content: "•";
             margin-right: 10px;
+            color: #333;
+        }
+
+        section li:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        @keyframes slideInLeft {
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .faq h3 {
             font-size: 1.5em;
-            color: #ff7e5f;
+            color: #ff6347;
             cursor: pointer;
             padding: 10px;
             border-radius: 5px;
             background: rgba(255, 245, 200, 0.9);
             margin: 10px 0;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
         }
 
         .faq h3:hover {
-            background: #ffe680;
+            background: #ffd700;
+            transform: translateX(5px);
         }
 
         .faq p {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
+            max-height: 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0 10px;
             background: rgba(255, 245, 200, 0.9);
             border-radius: 5px;
+            transition: max-height 0.5s ease, padding 0.5s ease;
         }
 
         .faq h3.active + p {
-            display: block;
+            max-height: 200px; /* Увеличьте, если текст длиннее */
+            padding: 10px;
         }
 
         footer {
-            background: #ff7e5f;
-            color: white;
+            background: #ff6347;
+            color: #fff;
             padding: 20px;
             text-align: center;
             margin-top: auto;
@@ -163,12 +199,12 @@
         }
 
         footer a {
-            color: #fff5cc;
+            color: #fffacd;
             text-decoration: none;
         }
 
         footer a:hover {
-            color: #fffacd;
+            color: #ffd700;
         }
 
         .date {
@@ -195,25 +231,25 @@
         <section id="rules" class="rules">
             <h2>Правила</h2>
             <ul>
-                <li>Выполняйте условия розыгрыша.</li>
-                <li>Следите за новостями в Telegram-боте.</li>
-                <li>Один приз на один аккаунт.</li>
+                <li style="--i: 1">Выполняйте условия розыгрыша.</li>
+                <li style="--i: 2">Следите за новостями в Telegram-боте.</li>
+                <li style="--i: 3">Один приз на один аккаунт.</li>
             </ul>
         </section>
         <section id="prizes" class="prizes">
             <h2>Призы</h2>
             <ul>
-                <li>Игровые деньги и аксессуары.</li>
-                <li>Эксклюзивные машины и скины.</li>
-                <li>Особняки и недвижимость в игре.</li>
+                <li style="--i: 1">Игровые деньги и аксессуары.</li>
+                <li style="--i: 2">Эксклюзивные машины и скины.</li>
+                <li style="--i: 3">Особняки и недвижимость в игре.</li>
             </ul>
         </section>
         <section id="timeline" class="timeline">
             <h2>Сроки</h2>
             <ul>
-                <li>Начало: 1 июля 2025.</li>
-                <li>Окончание: 31 июля 2025.</li>
-                <li>Победители — в начале августа.</li>
+                <li style="--i: 1">Начало: 1 июля 2025.</li>
+                <li style="--i: 2">Окончание: 31 июля 2025.</li>
+                <li style="--i: 3">Победители — в начале августа.</li>
             </ul>
         </section>
         <section class="note">
@@ -222,11 +258,11 @@
         </section>
         <section class="faq">
             <h2>Часто задаваемые вопросы</h2>
-            <h3>Как участвовать в конкурсе?</h3>
+            <h3 role="button" aria-expanded="false">Как участвовать в конкурсе?</h3>
             <p>Просто перейдите в нашего Telegram-бота и следуйте инструкциям.</p>
-            <h3>Как получить приз?</h3>
+            <h3 role="button" aria-expanded="false">Как получить приз?</h3>
             <p>Победителям придут уведомления прямо в Telegram с дальнейшими действиями.</p>
-            <h3>Где публикуются результаты?</h3>
+            <h3 role="button" aria-expanded="false">Где публикуются результаты?</h3>
             <p>Результаты будут в Telegram-боте и на нашем сайте.</p>
         </section>
     </main>
@@ -238,9 +274,11 @@
     <script>
         document.querySelectorAll('.faq h3').forEach(item => {
             item.addEventListener('click', function() {
-                this.classList.toggle('active');
+                const isActive = this.classList.toggle('active');
+                this.setAttribute('aria-expanded', isActive);
                 const content = this.nextElementSibling;
-                content.style.display = content.style.display === "block" ? "none" : "block";
+                content.style.maxHeight = isActive ? '200px' : '0';
+                content.style.padding = isActive ? '10px' : '0 10px';
             });
         });
     </script>
