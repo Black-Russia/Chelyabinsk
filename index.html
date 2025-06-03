@@ -3,27 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Зимний Розыгрыш в Black Russia</title>
+    <title>Летний Розыгрыш в Black Russia</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Фон с зимним градиентом и снегом */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(180deg, #add8e6, #001f3f);
-            color: #fff;
+            background: linear-gradient(180deg, #ffe680, #ff7e5f);
+            color: #333;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             animation: fadeIn 1s ease-in-out;
-        }
-
-        /* Анимация падающего снега */
-        @keyframes snow {
-            from { background-position: 0 0; }
-            to { background-position: 0 100%; }
         }
 
         @keyframes fadeIn {
@@ -31,10 +24,9 @@
             to { opacity: 1; }
         }
 
-        /* Заголовок с зимним эффектом */
         header {
-            background: linear-gradient(45deg, #5ac0e0, #82d4ff);
-            color: #fff;
+            background: linear-gradient(45deg, #fcb045, #fd1d1d);
+            color: white;
             padding: 40px 20px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -49,8 +41,7 @@
         header h1 {
             font-size: 3em;
             margin: 0;
-            text-shadow: 0 0 15px #fff;
-            background: url('frosty-texture.png') no-repeat;
+            text-shadow: 0 0 10px rgba(255,255,255,0.6);
         }
 
         nav a {
@@ -62,29 +53,26 @@
         }
 
         nav a:hover {
-            color: #add8e6;
+            color: #ffe680;
         }
 
-        /* Кнопки с зимним светящимся эффектом */
         .button {
-            background-color: #5ac0e0;
-            color: white;
+            background-color: #ffd166;
+            color: #333;
             padding: 15px 30px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
             margin: 20px auto;
-            cursor: pointer;
+            display: inline-block;
+            text-align: center;
             border-radius: 30px;
             font-size: 1.2em;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .button:hover {
-            background-color: #82d4ff;
+            background-color: #ffea9e;
             transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
         .content {
@@ -92,10 +80,9 @@
             margin: 0 auto;
             max-width: 960px;
             text-align: left;
-            line-height: 1.6;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             animation: fadeInContent 1s ease-in-out;
         }
 
@@ -104,60 +91,56 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .rules, .prizes, .timeline, .note, .faq {
-            background: rgba(0, 0, 0, 0.8);
+        section {
             padding: 20px;
             margin: 20px 0;
             border-radius: 10px;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            background: #fff9e6;
+            border-left: 6px solid #ffd166;
         }
 
-        .rules h2, .prizes h2, .timeline h2, .note h2, .faq h2 {
+        section h2 {
             font-size: 2em;
-            color: #5ac0e0;
-            margin-top: 0;
+            color: #f76c6c;
         }
 
-        .rules ul, .prizes ul, .timeline ul, .faq ul {
+        section ul {
             padding-left: 20px;
             list-style: none;
         }
 
-        .rules li, .prizes li, .timeline li, .faq li {
+        section li {
             margin-bottom: 10px;
             font-size: 1.1em;
             line-height: 1.5;
+            position: relative;
         }
 
-        .rules li::before, .prizes li::before, .timeline li::before, .faq li::before {
-            content: "•";
-            color: #5ac0e0;
+        section li::before {
+            content: "🌴";
             margin-right: 10px;
         }
 
-        /* FAQ стили с улучшением */
         .faq h3 {
             font-size: 1.5em;
-            color: #82d4ff;
+            color: #ff7e5f;
             cursor: pointer;
-            transition: color 0.3s;
             padding: 10px;
-            background: rgba(0, 0, 0, 0.5);
             border-radius: 5px;
+            background: rgba(255, 245, 200, 0.9);
             margin: 10px 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: background 0.3s;
         }
 
         .faq h3:hover {
-            color: #add8e6;
+            background: #ffe680;
         }
 
         .faq p {
             display: none;
             margin-top: 10px;
             padding: 10px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(255, 245, 200, 0.9);
             border-radius: 5px;
         }
 
@@ -165,10 +148,9 @@
             display: block;
         }
 
-        /* Футер с зимней тематикой */
         footer {
-            background: #001f3f;
-            color: #fff;
+            background: #ff7e5f;
+            color: white;
             padding: 20px;
             text-align: center;
             margin-top: auto;
@@ -181,17 +163,16 @@
         }
 
         footer a {
-            color: rgba(255, 255, 255, 0.7);
+            color: #fff5cc;
             text-decoration: none;
-            transition: color 0.3s;
         }
 
         footer a:hover {
-            color: #5ac0e0;
+            color: #fffacd;
         }
 
         .date {
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.6);
             font-size: 0.8em;
             position: absolute;
             bottom: 5px;
@@ -201,8 +182,8 @@
 </head>
 <body>
     <header>
-        <h1>Зимний Розыгрыш в Black Russia</h1>
-        <p>Примите участие и выиграйте невероятные призы!</p>
+        <h1>Летний Розыгрыш в Black Russia</h1>
+        <p>Примите участие и выиграйте крутые призы этим летом!</p>
         <nav>
             <a href="#rules">Правила</a>
             <a href="#prizes">Призы</a>
@@ -214,45 +195,45 @@
         <section id="rules" class="rules">
             <h2>Правила</h2>
             <ul>
-                <li>Участвуйте, выполняя условия конкурса.</li>
-                <li>Следите за обновлениями на нашем сайте.</li>
+                <li>Выполняйте условия розыгрыша.</li>
+                <li>Следите за новостями в Telegram-боте.</li>
                 <li>Один приз на один аккаунт.</li>
             </ul>
         </section>
         <section id="prizes" class="prizes">
             <h2>Призы</h2>
             <ul>
-                <li>Игровые валюты.</li>
-                <li>Эксклюзивные автомобили.</li>
-                <li>Роскошные дома.</li>
+                <li>Игровые деньги и аксессуары.</li>
+                <li>Эксклюзивные машины и скины.</li>
+                <li>Особняки и недвижимость в игре.</li>
             </ul>
         </section>
         <section id="timeline" class="timeline">
             <h2>Сроки</h2>
             <ul>
-                <li>Начало конкурса: 1 декабря.</li>
-                <li>Конец конкурса: 31 декабря.</li>
-                <li> Бот работает эффективно.</li>
+                <li>Начало: 1 июля 2025.</li>
+                <li>Окончание: 31 июля 2025.</li>
+                <li>Победители — в начале августа.</li>
             </ul>
         </section>
         <section class="note">
             <h2>Примечание</h2>
-            <p>Убедитесь, что вы ознакомлены со всеми условиями и правилами перед участием.</p>
+            <p>Перед участием обязательно прочтите все правила, чтобы не упустить шанс на победу.</p>
         </section>
         <section class="faq">
             <h2>Часто задаваемые вопросы</h2>
             <h3>Как участвовать в конкурсе?</h3>
-            <p>Чтобы участвовать, выполните все условия, указанные в правилах.</p>
+            <p>Просто перейдите в нашего Telegram-бота и следуйте инструкциям.</p>
             <h3>Как получить приз?</h3>
-            <p>Перейдите на Telegram, и получите приз от туда.</p>
-            <h3>Где можно узнать результаты?</h3>
-            <p>Результаты будут опубликованы на нашем сайте и в Telegram.</p>
+            <p>Победителям придут уведомления прямо в Telegram с дальнейшими действиями.</p>
+            <h3>Где публикуются результаты?</h3>
+            <p>Результаты будут в Telegram-боте и на нашем сайте.</p>
         </section>
     </main>
     <footer>
-        <p>© 2024 Black Russia. Все права защищены.</p>
+        <p>© 2025 Black Russia. Все права защищены.</p>
         <a href="#rules">Снова к правилам</a>
-        <div class="date">Дата обновления: 1 декабря 2024</div>
+        <div class="date">Дата обновления: 1 июля 2025</div>
     </footer>
     <script>
         document.querySelectorAll('.faq h3').forEach(item => {
