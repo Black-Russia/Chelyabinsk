@@ -3,7 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Зимний Розыгрыш • Black Russia</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Зимний Розыгрыш Black Russia 2025 | Участвуй и Выигрывай Призы</title>
+    <meta name="description" content="Зимний розыгрыш Black Russia 2025 — участвуй и выигрывай эксклюзивные призы: авто, дома, бизнесы и многое другое! Регистрация до 31 декабря.">
+    <meta name="keywords" content="Black Russia, розыгрыш, конкурс, призы, 2025, зимний розыгрыш, игра">
+    <meta name="author" content="Black Russia">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blackrussia.com/winter-giveaway">
+    <meta property="og:title" content="Зимний Розыгрыш Black Russia 2025">
+    <meta property="og:description" content="Участвуй в зимнем розыгрыше и выигрывай эксклюзивные призы!">
+    <meta property="og:image" content="https://blackrussia.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://blackrussia.com/winter-giveaway">
+    <meta property="twitter:title" content="Зимний Розыгрыш Black Russia 2025">
+    <meta property="twitter:description" content="Участвуй в зимнем розыгрыше и выигрывай эксклюзивные призы!">
+    <meta property="twitter:image" content="https://blackrussia.com/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -25,7 +51,23 @@
             position: relative;
         }
 
-        /* Snow Effect - Optimized for mobile */
+        /* Skip to main content for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #fff;
+            color: #0a1929;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Snow Effect */
         .snow {
             position: fixed;
             top: 0;
@@ -52,7 +94,7 @@
             }
         }
 
-        /* Header - Mobile First */
+        /* Header */
         header {
             position: relative;
             z-index: 10;
@@ -84,7 +126,7 @@
             padding: 0 10px;
         }
 
-        /* TIMER SECTION - Mobile Optimized */
+        /* TIMER SECTION */
         .timer-section {
             background: rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(15px);
@@ -142,7 +184,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* PARTICIPANTS COUNTER - Mobile First */
+        /* PARTICIPANTS COUNTER */
         .participants-section {
             background: linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(34, 197, 94, 0.15));
             backdrop-filter: blur(15px);
@@ -208,10 +250,39 @@
             50% { opacity: 0.5; transform: scale(1.2); }
         }
 
-        /* Navigation - Mobile Optimized */
+        /* CTA Button - Inside Participants Section */
+        .button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #ffffff 0%, #e3f2ff 100%);
+            border-radius: 50px;
+            color: #0a1929;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            text-decoration: none;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .button:focus {
+            outline: 2px solid rgba(255, 255, 255, 0.8);
+            outline-offset: 2px;
+        }
+
+        /* Navigation */
         nav {
             margin: 20px 0;
             padding: 0 10px;
+            text-align: center;
         }
 
         nav a {
@@ -232,28 +303,12 @@
             transform: scale(0.95);
         }
 
-        /* CTA Button - Mobile Optimized */
-        .button {
-            display: block;
-            margin: 20px auto;
-            padding: 16px 40px;
-            background: linear-gradient(135deg, #ffffff 0%, #e3f2ff 100%);
-            border-radius: 50px;
-            color: #0a1929;
-            font-size: 1.1rem;
-            font-weight: 700;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-            text-decoration: none;
-            max-width: 300px;
-            text-align: center;
-            transition: transform 0.2s ease;
+        nav a:focus {
+            outline: 2px solid rgba(255, 255, 255, 0.8);
+            outline-offset: 2px;
         }
 
-        .button:active {
-            transform: scale(0.95);
-        }
-
-        /* Main Content - Mobile First */
+        /* Main Content */
         main {
             position: relative;
             z-index: 10;
@@ -313,7 +368,7 @@
             font-size: 1.2rem;
         }
 
-        /* FAQ - Mobile Optimized */
+        /* FAQ */
         .faq h3 {
             background: rgba(255, 255, 255, 0.12);
             padding: 15px;
@@ -330,6 +385,11 @@
 
         .faq h3:active {
             transform: scale(0.98);
+        }
+
+        .faq h3:focus {
+            outline: 2px solid rgba(255, 255, 255, 0.8);
+            outline-offset: 2px;
         }
 
         .faq h3::after {
@@ -353,11 +413,11 @@
             padding: 0 15px;
             color: #f0f8ff;
             font-size: 0.95rem;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         .faq h3.active + p {
-            max-height: 300px;
+            max-height: 200px;
             padding: 15px;
         }
 
@@ -430,74 +490,92 @@
                 max-width: 1000px;
             }
         }
+
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-<div class="snow" id="snow-container"></div>
+<!-- Skip to main content for screen readers -->
+<a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
 
-<header>
+<div class="snow" id="snow-container" aria-hidden="true"></div>
+
+<header role="banner">
     <h1>Зимний Розыгрыш<br>Black Russia</h1>
     <p>Подготовься к праздникам — участвуй и выигрывай!</p>
 </header>
 
 <!-- ТАЙМЕР ОБРАТНОГО ОТСЧЁТА -->
-<div class="timer-section">
+<div class="timer-section" role="timer" aria-live="polite">
     <div class="timer-title">⏰ До окончания розыгрыша</div>
     <div class="timer-display">
         <div class="timer-block">
-            <span class="timer-number" id="days">00</span>
+            <span class="timer-number" id="days" aria-label="дней">00</span>
             <span class="timer-label">Дней</span>
         </div>
         <div class="timer-block">
-            <span class="timer-number" id="hours">00</span>
+            <span class="timer-number" id="hours" aria-label="часов">00</span>
             <span class="timer-label">Часов</span>
         </div>
         <div class="timer-block">
-            <span class="timer-number" id="minutes">00</span>
+            <span class="timer-number" id="minutes" aria-label="минут">00</span>
             <span class="timer-label">Минут</span>
         </div>
         <div class="timer-block">
-            <span class="timer-number" id="seconds">00</span>
+            <span class="timer-number" id="seconds" aria-label="секунд">00</span>
             <span class="timer-label">Секунд</span>
         </div>
     </div>
 </div>
 
-<!-- СЧЁТЧИК УЧАСТНИКОВ -->
-<div class="participants-section">
-    <span class="participants-icon">👥</span>
-    <div class="participants-number" id="participant-count">1,247</div>
+<!-- СЧЁТЧИК УЧАСТНИКОВ + КНОПКА -->
+<div class="participants-section" aria-live="polite">
+    <span class="participants-icon" aria-hidden="true">👥</span>
+    <div class="participants-number" id="participant-count" aria-label="количество участников">1,247</div>
     <div class="participants-label">Уже участвуют</div>
     <div class="participants-live">
-        <span class="live-dot"></span>
+        <span class="live-dot" aria-hidden="true"></span>
         LIVE
     </div>
+    
+    <!-- КНОПКА ПЕРЕНЕСЕНА СЮДА -->
+    <a href="https://t.me/blacckrussia_bot" class="button" aria-label="Перейти в Telegram бота для участия">
+        Участвовать в розыгрыше →
+    </a>
 </div>
 
-<nav>
+<nav role="navigation" aria-label="Основная навигация">
     <a href="#rules">Правила</a>
     <a href="#prizes">Призы</a>
     <a href="#timeline">Сроки</a>
     <a href="#faq">FAQ</a>
 </nav>
 
-<a href="https://t.me/blacckrussia_bot" class="button">Перейти в бота</a>
-
-<main>
-    <section id="rules">
-        <h2>Правила</h2>
+<main id="main-content" role="main">
+    <section id="rules" aria-labelledby="rules-heading">
+        <h2 id="rules-heading">Правила</h2>
         <ul>
-            <li>Выполняйте условия розыгрыша и следуйте инструкциям</li>
+            <li>Выполняйте условия розыгрыша согласно инструкциям</li>
             <li>Следите за обновлениями в Telegram-боте</li>
             <li>Один приз — одному участнику</li>
             <li>Победители определяются честно и прозрачно</li>
         </ul>
     </section>
 
-    <section id="prizes">
-        <h2>Призы</h2>
+    <section id="prizes" aria-labelledby="prizes-heading">
+        <h2 id="prizes-heading">Призы</h2>
         <ul>
             <li>Зимние игровые аксессуары и уникальные предметы</li>
             <li>Эксклюзивные авто премиум-класса и редкие скины</li>
@@ -506,8 +584,8 @@
         </ul>
     </section>
 
-    <section id="timeline">
-        <h2>Сроки</h2>
+    <section id="timeline" aria-labelledby="timeline-heading">
+        <h2 id="timeline-heading">Сроки</h2>
         <ul>
             <li>Старт розыгрыша: 1 декабря 2025</li>
             <li>Окончание приёма заявок: 31 декабря 2025</li>
@@ -516,24 +594,24 @@
         </ul>
     </section>
 
-    <section class="faq" id="faq">
-        <h2>FAQ</h2>
+    <section class="faq" id="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Часто задаваемые вопросы</h2>
 
-        <h3>Как участвовать в розыгрыше?</h3>
-        <p>Перейдите в наш Telegram-бота по кнопке выше — там вы найдете подробную инструкцию и все условия участия.</p>
+        <h3 tabindex="0" role="button" aria-expanded="false">Как участвовать?</h3>
+        <p>Нажмите кнопку выше и следуйте инструкциям в боте.</p>
 
-        <h3>Как получить свой приз?</h3>
-        <p>Победитель получает личное сообщение в Telegram с инструкцией по получению приза. Убедитесь, что ваш аккаунт активен.</p>
+        <h3 tabindex="0" role="button" aria-expanded="false">Как получить приз?</h3>
+        <p>Победитель получит сообщение в Telegram с инструкцией.</p>
 
-        <h3>Где смотреть результаты розыгрыша?</h3>
-        <p>Результаты публикуются в боте и на официальных страницах проекта Black Russia. Следите за обновлениями!</p>
+        <h3 tabindex="0" role="button" aria-expanded="false">Где смотреть результаты?</h3>
+        <p>Результаты будут в боте и на официальных страницах.</p>
 
-        <h3>Могу ли я участвовать несколько раз?</h3>
-        <p>Один пользователь может участвовать только один раз. Повторные заявки не принимаются.</p>
+        <h3 tabindex="0" role="button" aria-expanded="false">Можно участвовать дважды?</h3>
+        <p>Нет, один пользователь — одна заявка.</p>
     </section>
 </main>
 
-<footer>
+<footer role="contentinfo">
     <p>©️ 2025 Black Russia. Все права защищены.</p>
     <p style="margin-top: 10px; opacity: 0.7; font-size: 0.85rem;">Удачи в розыгрыше! ❄️</p>
 </footer>
@@ -542,12 +620,27 @@
 // FAQ Toggle
 document.querySelectorAll(".faq h3").forEach(item => {
     item.addEventListener("click", () => {
+        const isActive = item.classList.contains("active");
+        
+        // Close all
         document.querySelectorAll(".faq h3").forEach(other => {
-            if (other !== item) {
-                other.classList.remove("active");
-            }
+            other.classList.remove("active");
+            other.setAttribute("aria-expanded", "false");
         });
-        item.classList.toggle("active");
+        
+        // Toggle current
+        if (!isActive) {
+            item.classList.add("active");
+            item.setAttribute("aria-expanded", "true");
+        }
+    });
+    
+    // Keyboard support
+    item.addEventListener("keypress", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            item.click();
+        }
     });
 });
 
@@ -579,20 +672,17 @@ function updateTimer() {
 updateTimer();
 setInterval(updateTimer, 1000);
 
-// PARTICIPANT COUNTER (Fake but realistic growth)
+// PARTICIPANT COUNTER
 let participantCount = 1247;
 
 function updateParticipantCount() {
-    // Randomly increase by 0-3 every 5-15 seconds
     const increase = Math.floor(Math.random() * 4);
     participantCount += increase;
-    
     document.getElementById("participant-count").textContent = participantCount.toLocaleString('ru-RU');
 }
 
-// Update participant count every 5-15 seconds randomly
 function scheduleNextUpdate() {
-    const delay = Math.random() * 10000 + 5000; // 5-15 seconds
+    const delay = Math.random() * 10000 + 5000;
     setTimeout(() => {
         updateParticipantCount();
         scheduleNextUpdate();
@@ -601,7 +691,7 @@ function scheduleNextUpdate() {
 
 scheduleNextUpdate();
 
-// Snowflakes (reduced for mobile performance)
+// Snowflakes
 function createSnowflake() {
     const snowflake = document.createElement('div');
     snowflake.classList.add('snowflake');
@@ -618,7 +708,6 @@ function createSnowflake() {
     }, 15000);
 }
 
-// Fewer snowflakes on mobile
 const isMobile = window.innerWidth < 768;
 const snowflakeInterval = isMobile ? 600 : 300;
 const initialSnowflakes = isMobile ? 10 : 20;
